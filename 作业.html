@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="godevil">
+    <title></title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            width: 35px;
+            position: fixed;
+            right: 0px;
+        }
+
+        ul.one {
+            top: calc(50% - 80px);
+        }
+
+        ul.two {
+            bottom: 0px;
+        }
+
+        li {
+            background-color: #7a6e6e;
+            margin-bottom: 5px;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            position: relative;
+            width: 35px;
+        }
+
+        li:hover {
+            background-color: #c81623;
+            border-radius: 0px;
+        }
+        ul.two li:nth-child(1):hover{
+            background-color: #7a6e6e;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+        div.icon {
+            width: 35px;
+            height: 35px;
+            position: relative;
+            background-image: url(http://static.360buyimg.com/devfe/toolbar/1.0.0/css/i/toolbars.png);
+            z-index: 2;
+        }
+
+        div.content {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 70px;
+            height: 35px;
+            line-height: 35px;
+            background-color: #c81623;
+            text-align: center;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            color: white;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        div.user {
+            background-position: -88px -175px;
+        }
+
+        div.cart {
+            background-position: -50px 0;
+        }
+
+        div.love {
+            background-position: -50px -50px;
+        }
+
+        div.message {
+            background-position: -190px -150px;
+        }
+
+        div.jqcode {
+            background-image: url(http://img14.360buyimg.com/uba/jfs/t5647/127/9531976167/1032/78b9967f/5988704aNcbdab58e.png);
+        }
+
+        div.top {
+            background-position: -50px -250px;
+        }
+
+        div.write {
+            background-position: -50px -300px;
+        }
+
+        div#jqcode {
+            position: absolute;
+            left: -123px;
+            bottom: 0;
+            padding: 8px 10px;
+            width: 100px;
+            height: 140px;
+            background: #e4393c;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #FFF;
+            text-align: center;  
+            display: none;
+        }
+        div#jqcode p{
+            margin: 0px 0px 5px;  
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="one">
+        <li>
+            <div class="icon user"></div>
+            <div class="content">京东会员</div>
+        </li>
+        <li>
+            <div class="icon cart"></div>
+            <div class="content">购物车</div>
+        </li>
+        <li>
+            <div class="icon love"></div>
+            <div class="content">我的关注</div>
+        </li>
+        <li>
+            <div class="icon message"></div>
+            <div class="content">我的消息</div>
+        </li>
+    </ul>
+    <ul class="two">
+        <li>
+            <div class="icon jqcode"></div>
+            <div id="jqcode">
+                <p>去app探索你查找的商品~</p>
+                <img src="http://qrimg.jd.com/http%3A%2F%2Fvs.m.jd.com%2Fappdau%2Findex.html%3Fkeyword%3D%E7%94%B5%E8%84%91%26from%3Dpc_search-100-1-1-2.png" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="icon top"></div>
+            <div class="content">顶部</div>
+        </li>
+        <li>
+            <div class="icon write"></div>
+            <div class="content">反馈</div>
+        </li>
+
+    </ul>
+    <script src="./jquery-3.4.1.js"></script>
+    <script>
+        $("div.icon").hover(function () {
+            $(this).next("div.content").stop().animate({ left: "-70px" })
+        }, function () {
+            $(this).next("div.content").stop().animate({ left: "0px" })
+        })
+        $("div.jqcode").hover(function(){
+            $("div#jqcode").show()
+        },function(){
+            $("div#jqcode").hide()
+        })
+    </script>
+</body>
+
+</html>
